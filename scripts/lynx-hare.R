@@ -1,6 +1,7 @@
 library(tidyverse) 
 
 data<-read_csv("data/lynx_hare_data.csv") #read in the dataset
+# I have saved and labelled the dataset locally from this website https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html
 
 #have a look at the data
 head(data)
@@ -21,7 +22,7 @@ data_long%>%
    
 #let's plot the lynx-abundance as a function of the hare abundance     
 data%>%
-  filter(year>1900,
+  filter(year>1910,
          year<1935) %>%
   ggplot(aes(x=hare, y=lynx, col=year)) +
   geom_path() + 
